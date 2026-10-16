@@ -1,0 +1,13 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // แต่ละบัญชีอ่าน/เขียนได้เฉพาะข้อมูลของตัวเอง
+    match /data/users/{uid}/{document=**} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+    // อย่างอื่นปิดทั้งหมด
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

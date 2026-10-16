@@ -1,0 +1,11 @@
+{
+  "name": "healthtwin-ai",
+  "private": true,
+  "type": "module",
+  "description": "HealthTwin AI - digital health twin with an AI health assistant",
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.131.0",
+    "@netlify/blobs": "11.1.2",
+    "jose": "6.2.12"
+  }
+}
